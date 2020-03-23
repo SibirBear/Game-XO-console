@@ -16,7 +16,7 @@ public class FieldTest {
     }
 
     @Test
-    public void setFigure() {
+    public void setFigure() throws Exception {
         final Field field = new Field();
         final Point testPoint = new Point(0,0);
         final Figure testFigure = Figure.O;
