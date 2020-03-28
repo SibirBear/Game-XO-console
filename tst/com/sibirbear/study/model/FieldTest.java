@@ -29,19 +29,6 @@ public class FieldTest {
     }
 
     @Test
-    public void testSetFigureWhenPointAlreadyOccupied() throws Exception {
-        final Field field = new Field();
-        final Point testPoint = new Point(0,0);
-        final Figure testFigure = Figure.O;
-
-        field.setFigure(testPoint, testFigure);
-        try {
-            field.setFigure(testPoint, testFigure);
-            fail();
-        } catch (final PointAlreadyOccupiedException e) {}
-    }
-
-    @Test
     public void TestGetFigureWhenFigureIsNotSet() throws Exception {
         final Field field = new Field();
         final Point testPoint = new Point(0,0);
