@@ -23,7 +23,7 @@ public class Field {
     }
 
     public Figure getFigure(final Point point) throws InvalidPointException {
-        if(checkPoint(point)) {
+        if(!checkPoint(point)) {
             throw new InvalidPointException();
         }
         return field[point.x][point.y];
@@ -32,7 +32,7 @@ public class Field {
     public void setFigure(final Point point, final Figure figure)
                                 throws InvalidPointException {
 
-        if(checkPoint(point)) {
+        if(!checkPoint(point)) {
             throw new InvalidPointException();
         }
 
@@ -44,7 +44,7 @@ public class Field {
     }
 
     private boolean checkCoordinate (final int coordinate, final int maxCoordinate) {
-        return coordinate < MIN_COORDINATE && coordinate >= maxCoordinate;
+        return coordinate >= MIN_COORDINATE && coordinate < maxCoordinate;
     }
 
 }
