@@ -1,6 +1,11 @@
 package com.sibirbear.study.model;
 
-public class Game<F> {
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+
+public class Game<F> implements Iterable<Player> {
 
     private final Player[] players;
     private final Field<F> field;
@@ -23,5 +28,11 @@ public class Game<F> {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public Iterator<Player> iterator() {
+        final List<Player> playersList = Arrays.asList(players);
+        return playersList.iterator();
     }
 }

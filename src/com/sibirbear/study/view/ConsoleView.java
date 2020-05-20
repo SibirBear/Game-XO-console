@@ -6,6 +6,7 @@ import com.sibirbear.study.controllers.WinnerController;
 import com.sibirbear.study.model.Field;
 import com.sibirbear.study.model.Figure;
 import com.sibirbear.study.model.Game;
+import com.sibirbear.study.model.Player;
 import com.sibirbear.study.model.exceptions.InvalidPointException;
 import com.sibirbear.study.model.exceptions.PointAlreadyOccupiedException;
 
@@ -21,6 +22,12 @@ public class ConsoleView {
 
     public void show(final Game<Figure> game) {
         System.out.format("Game name: %s\n", game.getName());
+
+        System.out.println("Players:");
+        for(Player player : game) {
+            System.out.format("Player name %s, figure: %s\n", player.getName(), player.getFigure());
+        }
+
         final Field<Figure> field = game.getField();
         for(int x = 0; x < field.getSize(); x++) {
             if(x != 0)
